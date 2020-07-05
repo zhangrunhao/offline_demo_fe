@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
-// const CleanWebpackPlugin = require('clean-webpack-plugin')
 const MiniCssExtracPlugin = require('mini-css-extract-plugin')
+const OfflinePackageWebpackPlugin = require("offline-package-webpack-plugin")
 
 module.exports = {
   entry: './src/index.js',
@@ -29,7 +29,13 @@ module.exports = {
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(),
+    new OfflinePackageWebpackPlugin({
+      packageNameKey: 'packageId',
+      packageNameValue: 'meeting',
+      version: 1,
+      baseUrl: "http://10.2.155.99/",
+      fileTypes: ['js', 'css', 'png']
+    }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html'

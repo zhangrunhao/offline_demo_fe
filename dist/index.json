@@ -1,0 +1,20 @@
+{
+  "packageId": "meeting",
+  "version": 1,
+  "items": [
+    {
+      "packageId": "meeting",
+      "version": 1,
+      "remoteUrl": "http://10.2.155.99/main.css",
+      "path": "main.css",
+      "mimeType": "text/css"
+    },
+    {
+      "packageId": "meeting",
+      "version": 1,
+      "remoteUrl": "http://10.2.155.99/main.js",
+      "path": "main.js",
+      "mimeType": "application/javascript"
+    }
+  ]
+}
