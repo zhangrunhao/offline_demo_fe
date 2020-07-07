@@ -31,6 +31,7 @@ module.exports = {
   plugins: [
     new OfflinePackageWebpackPlugin({
       packageNameKey: 'packageId',
+      // TODO: 上传安装包时, 应该对这个packageId进行检查, 和线上module_name保持一直才行
       packageNameValue: 'meeting',
       version: 1,
       baseUrl: "http://10.2.155.99/",
