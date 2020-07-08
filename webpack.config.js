@@ -1,6 +1,11 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtracPlugin = require('mini-css-extract-plugin')
-const OfflinePackageWebpackPlugin = require("offline-package-webpack-plugin")
+// const OfflinePackageWebpackPlugin = require("offline-package-webpack-plugin")
+const OfflinePackageWebpackPlugin = require('./webpack/OfflinePackageWebpackPlugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+var ZipPlugin = require('zip-webpack-plugin');
+
 
 module.exports = {
   entry: './src/index.js',
@@ -35,11 +40,12 @@ module.exports = {
       packageNameValue: 'meeting',
       version: 1,
       baseUrl: "http://10.2.155.99/",
-      fileTypes: ['js', 'css', 'png']
+      fileTypes: ['js', 'css', 'png', 'html']
     }),
+    new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html'
+      filename: 'index.html'
     }),
     new MiniCssExtracPlugin({
       filename: '[name].css',
