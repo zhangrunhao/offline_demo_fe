@@ -109,7 +109,7 @@ module.exports = class OfflinePackagePlugin {
             compression: 'DEFLATE',
             compressionOptions: { level: 9 }
           })
-          .then((content) => {n
+          .then((content) => {
             const outputPath = `./dist/${this.options.folderName}.zip`;
             // 这里已经输出完了.. 手动写入了
             // compilation.assets[outputPath] = new RawSource(content);
