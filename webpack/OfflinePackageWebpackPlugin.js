@@ -64,10 +64,10 @@ module.exports = class OfflinePackagePlugin {
           }
 
           content.items.push({
-            [this.options.packageNameKey]: this.options.packageNameValue,
-            version: this.options.version,
-            remoteUrl: this.options.baseUrl + filename,
-            path: filename,
+            [this.options.packageNameKey]: this.options.packageNameValue, // packageId
+            version: this.options.version, // version
+            // remoteUrl: this.options.baseUrl + filename,
+            path: filename, // filepath/name
             mimeType: mime.lookup(fileType)
           });
         }
